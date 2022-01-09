@@ -4,6 +4,12 @@
 # n은 길이 10,000이하인 자연수입니다.
 
 def solution(n):
-    answer = ''
-    return answer
-
+    answer = []; # 정답을 담을 빈 배열 생성.
+    i = 0; # loop를 돌릴 변수 i 생성. 시작은 0부터.
+    while (i < n) and (n <= 10000): # while 시작, 입력 받은 n만큼 반복문을 돌면서 제한 조건인 n의 길이는 10000이하인 자연수를 충족.
+        if i % 2 == 0: # 몫이 0일 때는 answer 배열에 '수' 추가.
+            answer.append('수')
+        else:
+            answer.append('박')
+        i = i + 1 # i는 n이 될 때까지 1씩 증가.
+    return ''.join(answer) # 완성된 배열을 문자열로 변환.
