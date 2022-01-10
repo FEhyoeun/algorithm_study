@@ -7,17 +7,10 @@
 # 배열 arr의 원소의 크기 : 0보다 크거나 같고 9보다 작거나 같은 정수
 
 def solution(arr):
-    i = 0;
-    n = len(arr);
-    result = [];
-
-    while i < n:
-        if arr[i] == arr[i + 1]:
+    result = []; # 정답 배열인 result 선언
+    for i in range(len(arr)): # 입력받은 arr의 길이만큼 반복문 돌리기
+        if i == 0: # 첫 번째 수는 무조건 정답 배열에 더하기
             result.append(arr[i]);
-            i = i + 1;
-        else:
+        elif arr[i] != arr[i-1]: # i번 째 요소와 i-1번째 요소가 다르면 정답 배열에 더하기
             result.append(arr[i]);
-            break;
-            i = i + 1;
-
-    return result
+    return result;
