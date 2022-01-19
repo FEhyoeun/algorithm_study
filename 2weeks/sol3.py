@@ -13,19 +13,10 @@
 
 date = int(input()) # 날짜의 일의 자리 숫자
 num_list = list(map(int, input().split())) # 5대의 자동차 번호의 일의 자리 숫자. 배열로 받기.
-
-date_list = [] # 입력받은 날짜를 31일까지 늘림. 이 안에 포함되면 10부제 차량에 포함되는 것.
-date_list.append(date)
 contravene = 0 # 위반 차량
-i = 1
 
-while date_list[-1] < 22:
-  date_list.append(i*10 + date)
-  i += 1
-
-# x in A해서 False 나오면 contravene에 더하면 됨
-for j in num_list:
-  if(j in date_list):
+for i in num_list:
+  if date == i:
     contravene += 1
 
 print(contravene)
