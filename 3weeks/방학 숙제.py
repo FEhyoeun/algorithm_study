@@ -10,3 +10,15 @@
 # 출력
 # 첫째 줄에 상근이가 놀 수 있는 날의 최댓값을 출력한다.
 
+from math import ceil
+
+L = int(input())
+A = int(input())
+B = int(input())
+C = int(input())
+D = int(input()) # 방학 일수, 국어 페이지, 수학 페이지, 국어 최대 페이지, 수학 최대 페이지
+
+ko = ceil(A/C)
+math = ceil(B/D)
+
+print(L - (ko if (ko - math) >= 0 else math))
