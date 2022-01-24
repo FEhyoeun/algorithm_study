@@ -11,3 +11,15 @@
 
 # 출력
 # 첫째 줄에 M을 넘지 않으면서 M에 최대한 가까운 카드 3장의 합을 출력한다.
+
+N, M = map(int, input().split()) # 카드의 개수, 타겟 넘버
+arr = list(map(int, input().split())) # N개만큼 뽑은 숫자들
+result = 0
+
+for i in range(N):
+    for j in range(i + 1, N):
+        for k in range(j + 1, N):
+            if arr[i] + arr[j] + arr[k] <= M:
+              result = max(result, arr[i] + arr[j] + arr[k])
+
+print(result)
