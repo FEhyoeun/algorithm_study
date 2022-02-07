@@ -6,3 +6,12 @@
 # 참가자의 이름은 1개 이상 20개 이하의 알파벳 소문자로 이루어져 있습니다.
 # 참가자 중에는 동명이인이 있을 수 있습니다.
 
+def solution(participant, completion):
+    participant.sort()
+    completion.sort()
+
+    for i in range(len(completion)):
+        if completion[i] != participant[i]:
+            return participant[i]
+
+    return participant[len(participant) - 1]
