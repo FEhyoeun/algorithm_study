@@ -18,3 +18,11 @@
 # - clothes의 모든 원소는 문자열로 이루어져 있습니다.
 # - 모든 문자열의 길이는 1 이상 20 이하인 자연수이고 알파벳 소문자 또는 '_' 로만 이루어져 있습니다.
 # - 스파이는 하루에 최소 한 개의 의상은 입습니다.
+
+from collections import Counter
+from functools import reduce
+
+def solution(clothes):
+    counter = Counter([type for name, type in clothes]) # Counter({'headgear': 2, 'eyewear': 1})
+    sum = reduce(lambda acc, cur: acc * (cur +1), counter.values(), 1) -1 # reduce(집계 함수, 순회 가능한 데이터[, 초기값])
+    return sum
